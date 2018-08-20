@@ -11,7 +11,7 @@ huge gcd(huge a, huge b) {
 	return gcd(b, a % b);
 }
 
-huge mmc(huge a, huge b) {
+huge lcm(huge a, huge b) {
 	return a*b / gcd(a, b);
 }
 
@@ -22,7 +22,7 @@ int main() {
 	
 	scanf("%llu %llu", &a, &b);
 
-	printf("%llu\n", mmc(a,b));
+	printf("%llu\n", lcm(a,b));
 
 
 
