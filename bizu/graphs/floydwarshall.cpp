@@ -1,5 +1,8 @@
 // C Program for Floyd Warshall Algorithm
-#include<stdio.h>
+#include <stdio.h>
+#include <algorithm>
+
+using namespace std;
  
 // Number of vertices in the graph
 #define V 4
@@ -40,10 +43,7 @@ void floydWarshall (int graph[][V])
             // above picked source
             for (j = 0; j < V; j++)
             {
-                // If vertex k is on the shortest path from
-                // i to j, then update the value of dist[i][j]
-                if (dist[i][k] + dist[k][j] < dist[i][j])
-                    dist[i][j] = dist[i][k] + dist[k][j];
+              dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]); 
             }
         }
     }
@@ -82,10 +82,10 @@ int main()
        \|/         |
        (1)------->(2)
             3           */
-    int graph[V][V] = { {0,   5,  INF, 10},
-                        {INF, 0,   3, INF},
-                        {INF, INF, 0,   1},
-                        {INF, INF, INF, 0}
+    int graph[V][V] = { {INF,   5,  INF, 10},
+                        {INF, INF,   3, INF},
+                        {INF, INF, INF,   1},
+                        {INF, INF, INF, INF}
                       };
  
     // Print the solution
