@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+    // c++ 14 unordered_set<int>
     set<int> s; // declaração
 
     s.insert(10); // Adiciona elemento no set
